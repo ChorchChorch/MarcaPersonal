@@ -8,7 +8,6 @@
   - Fecha de vencimiento, precargada al día siguiente por defecto  
 - Editar un trámite existente: recarga el formulario con sus datos  
 - Eliminar un trámite con confirmación
-- **BUG** a corregir, si estas aditando la nota y le das borrar a la nota se queda colgado 
 
 ## 2. Persistencia offline  
 - Almacenamiento local con localStorage  
@@ -35,7 +34,7 @@
 - Cada 10 segundos revisa los trámites que venzan en 2 días  
 - Muestra notificación push con título, cuerpo y emoji cuando aplica  
 - Evita duplicados gracias a un conjunto de índices notificados
-- Mejoras pendientes: que la notificacion funcione en segundo plano y que funcione en horarios nornales, no a ls 2 AM  
+
 
 ## 7. UX y estilo  
 - Cabecera con degradado y sombra  
@@ -43,3 +42,7 @@
 - Inputs y botones con transiciones, sombras y efectos hover  
 - Animaciones de entrada (`fadeIn`) y elevación al pasar el dedo por tarjetas  
 - Totalmente responsive para Android y funcionamiento offline  
+
+## 8. Bugs conocidos
+-Si estas aditando la nota y le das borrar a la nota se queda colgado en modo editar. Se debio restauar backup JSON
+- La notificacion funcionan en segundo plano? Configurar en horarios nornales, no a ls 2 AM  
