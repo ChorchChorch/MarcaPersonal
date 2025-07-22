@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notas y Recordatorios</title>
+  <style>
+    :root {
+      --gradient-start: #667eea;
+      --gradient-end:   #764ba2;
+      --bg:             #f0f3f5;
+      --card-bg:        #ffffff;
+      --primary:        #5c6bc0;
+      --secondary:      #42a5f5;
+      --danger:         #ef5350;
+      --text:           #2e2e2e;
+      --muted:          #797979;
+      --border:         #e0e0e0;
+      --radius:         12px;
+      --shadow:         rgba(0, 0, 0, 0.1);
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+    body {
+      display: flex; flex-direction: column; min-height: 100vh;
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+    }
+    header {
+      position: relative;
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      color: #fff; text-align: center;
+      padding: 1.5rem 1rem; box-shadow: 0 2px 4px var(--shadow);
+    }
+    header h1 {
+      font-weight: 300; font-size: 1.8rem;
+    }
+    .hamburger-btn {
+      position: absolute; top: 1rem; left: 1rem;
+      background: none; border: none;
+      font-size: 1.8rem; color: #fff;
+      cursor: pointer; z-index: 2;
+    }
+    .ir-lista-btn {
+      position: absolute; top: 1rem; right: 1rem;
+      background: none; border: none;
+      font-size: 1.8rem; color: #fff;
+      cursor: pointer; z-index: 2;
+      transition: transform 0.1s;
+    }
+    .ir-lista-btn:hover { transform: scale(1.2); }
+    .menu {
+      position: absolute; top: 100%; left: 0;
+      background: #fff; min-width: 200px;
+      box-shadow: 0 2px 8px var(--shadow);
+      border-radius: 0 0 var(--radius) var(--radius);
+      overflow: hidden; opacity: 0; visibility: hidden;
+      transform: translateY(-10px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+      z-index: 1;
+    }
+    .menu.show {
+      opacity: 1; visibility: visible;
+      transform: translateY(0);
+    }
+    .menu-item {
+      display: block; width: 100%; padding: 0.75rem 1rem;
+      background: none; border: none; text-align: left;
+      font-size: 1rem; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .menu-item:hover { background: var(--bg); }
+
+    form {
+      background: rgba(255,255,255,0.85); backdrop-filter: blur(8px);
+      margin: -2rem 1rem 1.5rem; padding: 1.5rem;
+      border-radius: var(--radius); box-shadow: 0 4px 8px var(--shadow);
+      position: relative; z-index: 0;
+    }
+    form:hover { box-shadow: 0 6px 12px var(--shadow); }
+    input[type="text"], input[type="url"],
+    input[type="date"], textarea {
+      width: 100%; padding: 0.75rem 1rem; margin-bottom: 1rem;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      background: #fff; font-size: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(102,126,234,0.3);
+      outline: none;
+    }
+    .file-group {
+      display: flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .file-group input[type="file"] {
+      flex: 1;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .btn-camara {
+      width: 3rem; height: 3rem;
+      font-size: 1.5rem;
+      border-radius: var(--radius);
+      border: none;
+      background: var(--secondary);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 2px 4px var(--shadow);
+      transition: transform 0.1s, box-shadow 0.2s;
+    }
+    .btn-camara:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px var(--shadow);
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.75rem 1.25rem; border: none; border-radius: var(--radius);
+      font-size: 1rem; cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.2s;
+    }
+    .btn:not(:last-child) { margin-right: 0.5rem; }
+    .btn-primary {
+      background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+      color: #fff; box-shadow: 0 2px 4px var(--shadow);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px); box-shadow: 0 4px 8px var(--shadow);
+    }
+    .btn-secondary {
+      background: var(--secondary); color: #fff;
+      box-shadow: 0 2px 4px var(--shadow);
+    }
+    .btn-secondary:hover {
+      transform: translateY(-2px); box-shadow: 0 4px 8px var(--shadow);
+    }
+
+    #lista {
+      flex: 1; padding: 0 1rem 1rem; overflow-y: auto;
+    }
+    .nota {
+      position: relative; background: var(--card-bg);
+      border-left: 4px solid var(--secondary); border-radius: var(--radius);
+      box-shadow: 0 2px 6px var(--shadow);
+      padding: 1rem; margin-bottom: 1rem;
+      opacity: 0; animation: fadeIn 0.4s ease forwards;
+      transition: transform 0.1s, box-shadow 0.2s;
+    }
+    .nota:hover {
+      transform: translateY(-2px); box-shadow: 0 4px 12px var(--shadow);
+    }
+    .nota.urgente { border-left-color: var(--danger); background: #fff5f5; }
+    .nota strong {
+      font-size: 1.1rem; display: block; margin-bottom: 0.4rem;
+    }
+    .detalle {
+      color: var(--muted); line-height: 1.4;
+      margin-bottom: 0.6rem; white-space: pre-wrap;
+    }
+    .fecha {
+      font-size: 0.9rem; color: var(--muted);
+      margin-bottom: 0.5rem; display: block;
+    }
+    .imagenes-preview {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .imagenes-preview img {
+      max-width: 80px; max-height: 80px;
+      object-fit: cover; border-radius: var(--radius);
+      box-shadow: 0 1px 3px var(--shadow);
+    }
+    .acciones {
+      position: absolute; top: 0.75rem; right: 0.75rem;
+      display: flex; gap: 0.5rem;
+    }
+    .acciones button {
+      background: none; border: none; font-size: 1.2rem;
+      cursor: pointer; transition: color 0.2s, transform 0.1s;
+    }
+    .acciones button:hover { transform: scale(1.2); color: var(--primary); }
+    .acciones .eliminar:hover { color: var(--danger); }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button id="btnMenu" class="hamburger-btn">☰</button>
+    <button id="btnIrLista" class="ir-lista-btn" title="Ir a Notas">Agenda</button>
+    <h1>📝 Notas </h1>
+    <div id="menu" class="menu">
+      <button id="btnExport" class="menu-item">⬇️ Exportar JSON</button>
+      <button id="btnImport" class="menu-item">⬆️ Importar JSON</button>
+    </div>
+    <input type="file" id="inputImport" accept=".json" style="display:none"/>
+  </header>
+
+  <form id="formulario">
+    <input type="text" id="nombre" placeholder="Título de la nota" required />
+    <textarea id="detalle" placeholder="Contenido de la nota" rows="4"></textarea>
+    <input type="date" id="fecha" required />
+    <input type="url" id="enlace" placeholder="Enlace (opcional)" />
+
+    <div class="file-group">
+      <input type="file" id="imagenes" accept="image/*" multiple />
+      <button type="button" id="btnCamara" class="btn-camara" title="Tomar foto">📷</button>
+      <input type="file" id="camaraInput" accept="image/*" capture="environment" style="display:none"/>
+    </div>
+
+    <button type="submit" id="botonGuardar" class="btn btn-primary">Guardar</button>
+    <button type="button" id="copiar" class="btn btn-secondary">📋 Copiar</button>
+  </form>
+
+  <div id="lista"></div>
+
+  <script>
+  (function(){
+    const dbName = 'mpv-notas-db';
+    const storeName = 'notas';
+    let db, editingId = null;
+
+    const formulario    = document.getElementById('formulario');
+    const nombreInput   = document.getElementById('nombre');
+    const detalleInput  = document.getElementById('detalle');
+    const enlaceInput   = document.getElementById('enlace');
+    const fechaInput    = document.getElementById('fecha');
+    const imagenesInput = document.getElementById('imagenes');
+    const camaraInput   = document.getElementById('camaraInput');
+    const btnCamara     = document.getElementById('btnCamara');
+    const botonGuardar  = document.getElementById('botonGuardar');
+    const copiarBtn     = document.getElementById('copiar');
+    const btnMenu       = document.getElementById('btnMenu');
+    const btnIrLista    = document.getElementById('btnIrLista');
+    const menu          = document.getElementById('menu');
+    const btnExport     = document.getElementById('btnExport');
+    const btnImport     = document.getElementById('btnImport');
+    const inputImport   = document.getElementById('inputImport');
+    const lista         = document.getElementById('lista');
+
+    function setFechaManiana(){
+      const m = new Date(); m.setDate(m.getDate()+1);
+      fechaInput.value = m.toISOString().split('T')[0];
+    }
+    function transact(mode, fn){
+      const tx = db.transaction(storeName, mode);
+      fn(tx.objectStore(storeName));
+    }
+    function transactPromise(mode, fn){
+      return new Promise((res, rej) => {
+        const tx = db.transaction(storeName, mode);
+        const store = tx.objectStore(storeName);
+        fn(store);
+        tx.oncomplete = () => res();
+        tx.onerror = () => rej(tx.error);
+      });
+    }
+    function getAllNotas(){
+      return new Promise((res, rej) => {
+        transact('readonly', store => {
+          const req = store.getAll();
+          req.onsuccess = () => res(req.result);
+          req.onerror   = () => rej(req.error);
+        });
+      });
+    }
+    function getNota(id){
+      return new Promise((res, rej) => {
+        transact('readonly', store => {
+          const req = store.get(id);
+          req.onsuccess = () => res(req.result);
+          req.onerror   = () => rej(req.error);
+        });
+      });
+    }
+    function addNota(nota){ transact('readwrite', s=>s.add(nota)); }
+    function updateNota(nota){ transact('readwrite', s=>s.put(nota)); }
+    function deleteNota(id){ transact('readwrite', s=>s.delete(id)); }
+
+    function readImages(files){
+      return Promise.all(
+        Array.from(files).slice(0,3).map(f => new Promise(r => {
+          const rd = new FileReader();
+          rd.onload = ()=>r(rd.result);
+          rd.readAsDataURL(f);
+        }))
+      );
+    }
+
+    const abrir = indexedDB.open(dbName,1);
+    abrir.onupgradeneeded = e => {
+      db = e.target.result;
+      const store = db.createObjectStore(storeName, { keyPath:'id', autoIncrement:true });
+      store.createIndex('byDate','fecha');
+    };
+    abrir.onsuccess = e => {
+      db = e.target.result;
+      setFechaManiana();
+      renderAll();
+    };
+    abrir.onerror = e => console.error(e);
+
+    formulario.addEventListener('submit', async e => {
+      e.preventDefault();
+      const titulo = nombreInput.value.trim();
+      const detalle= detalleInput.value.trim();
+      const enlace = enlaceInput.value.trim();
+      const fecha  = fechaInput.value;
+      // combinamos archivos de galería y cámara
+      const files = [...imagenesInput.files, ...camaraInput.files];
+      let images = [];
+      if (files.length) images = await readImages(files);
+      else if (editingId!==null) {
+        const old = await getNota(editingId);
+        images = old.images || [];
+      }
+      const nota = { titulo, detalle, enlace, fecha, images };
+      if (editingId!==null) {
+        nota.id = editingId;
+        updateNota(nota);
+      } else {
+        addNota(nota);
+      }
+      formulario.reset();
+      setFechaManiana();
+      editingId = null;
+      botonGuardar.textContent = 'Guardar';
+      renderAll();
+    });
+
+    function renderAll(){
+      getAllNotas().then(notas => {
+        lista.innerHTML = '';
+        notas.sort((a,b)=>new Date(a.fecha)-new Date(b.fecha))
+             .forEach(renderNota);
+      });
+    }
+    function renderNota(n){
+      const hoy  = new Date();
+      const vence= new Date(n.fecha);
+      const dias = Math.ceil((vence-hoy)/(1000*60*60*24));
+      const div  = document.createElement('div');
+      div.className = 'nota'+(dias<=2?' urgente':'');
+      div.innerHTML=`
+        <div class="acciones">
+          <button onclick="startEdit(${n.id})">✏️</button>
+          <button onclick="confirmDelete(${n.id})" class="eliminar">❌</button>
+        </div>
+        <strong>${n.titulo}</strong>
+        <div class="detalle">${n.detalle}</div>
+        <span class="fecha">Vence: ${n.fecha} (${dias} día${dias===1?'':'s'})</span>
+        ${n.enlace?`<a href="${n.enlace}" target="_blank">Ir al enlace →</a>`:''}
+        ${n.images.length?`<div class="imagenes-preview">${
+          n.images.map(s=>`<img src="${s}" alt=""/>`).join('')
+        }</div>`:''}
+      `;
+      lista.appendChild(div);
+    }
+
+    window.startEdit = async id => {
+      const n = await getNota(id);
+      nombreInput.value  = n.titulo;
+      detalleInput.value = n.detalle;
+      enlaceInput.value  = n.enlace;
+      fechaInput.value   = n.fecha;
+      editingId = id;
+      botonGuardar.textContent = 'Actualizar';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    window.confirmDelete = id => {
+      if (confirm('¿Eliminar esta nota?')) {
+        deleteNota(id);
+        renderAll();
+      }
+    };
+
+    copiarBtn.addEventListener('click', () => {
+      getAllNotas().then(notas => {
+        if (!notas.length) return alert('No hay notas para copiar.');
+        let txt = '📝 Lista de Notas:\n\n';
+        notas.forEach((n,i)=>{
+          txt+=`Nota ${i+1}:\nTítulo: ${n.titulo}\nDetalle: ${n.detalle||'—'}\nFecha: ${n.fecha}\n`;
+          if(n.enlace) txt+=`Enlace: ${n.enlace}\n`;
+          txt+=`Imágenes: ${n.images.length}\n-----------------\n`;
+        });
+        navigator.clipboard.writeText(txt)
+          .then(_=>alert('Notas copiadas al portapapeles.'))
+          .catch(_=>alert('Error al copiar.'));
+      });
+    });
+
+    btnMenu.addEventListener('click', ()=> menu.classList.toggle('show'));
+    btnExport.addEventListener('click', ()=>{
+      menu.classList.remove('show');
+      getAllNotas().then(notas=>{
+        const b = new Blob([JSON.stringify(notas,null,2)],{type:'application/json'});
+        const u = URL.createObjectURL(b);
+        const a = document.createElement('a');
+        a.href=u; a.download='notas-mpv.json'; a.click();
+        URL.revokeObjectURL(u);
+      });
+    });
+    btnImport.addEventListener('click', ()=>{
+      menu.classList.remove('show');
+      inputImport.value = '';
+      inputImport.click();
+    });
+    inputImport.addEventListener('change', e=>{
+      const file = e.target.files[0];
+      if(!file) return;
+      const reader=new FileReader();
+      reader.onload=async ()=>{
+        try {
+          const notas = JSON.parse(reader.result);
+          if(!Array.isArray(notas)) throw 0;
+          await transactPromise('readwrite', s=>s.clear());
+          for(const n of notas) await transactPromise('readwrite', s=>s.add(n));
+          renderAll();
+          alert('Importación exitosa.');
+        } catch {
+          alert('JSON inválido o formato incorrecto.');
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    btnIrLista.addEventListener('click', ()=> {
+      lista.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    btnCamara.addEventListener('click', ()=> camaraInput.click());
+  })();
+  </script>
+</body>
+</html>
