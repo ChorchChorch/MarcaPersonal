@@ -1,0 +1,88 @@
+@media print {
+  /* 🧾 CONFIGURACIÓN GENERAL DE LA PÁGINA */
+  @page {
+    size: A4;                 /* Formato de hoja */
+    margin: 15mm;             /* Márgenes externos */
+  }
+
+  body {
+    background: #fff;         /* Fondo blanco */
+    color: #000;              /* Texto negro */
+    font-size: 11pt;          /* Tamaño de fuente optimizado para papel */
+    line-height: 1.5;         /* Espaciado entre líneas */
+  }
+
+  /* 📦 CONTENEDORES GENERALES */
+  section,
+  header.hero {
+    background: #fff;               /* Fondo blanco */
+    box-shadow: none;              /* Sin sombras decorativas */
+    border: none;                  /* Sin borde */
+    margin: 0.6rem 0;              /* Margen vertical entre secciones */
+    padding: 0.8rem;               /* Espaciado interno compacto */
+    page-break-inside: auto;      /* Permite cortes internos si es necesario */
+  }
+
+  /* 🧱 BLOQUES QUE NO DEBEN PARTIRSE ENTRE HOJAS */
+  .job,
+  .project-card {
+    margin-bottom: 0.8rem;
+    page-break-inside: avoid;     /* Evita que se corten estos bloques */
+  }
+
+  /* 📝 TÍTULOS Y LISTAS */
+  h2 {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.2rem;
+  }
+
+  ul {
+    margin-bottom: 0.4rem;
+  }
+
+  /* 🧑 FOTO DE PERFIL */
+  .profile-pic {
+    margin-bottom: 0.5rem;
+    box-shadow: none;             /* Elimina sombra decorativa en impresión */
+  }
+
+  /* 🖼️ PROYECTOS: DISEÑO HORIZONTAL CON SOMBRA RESTAURADA */
+  .project-content {
+    display: flex !important;          /* Diseño en fila */
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 1rem !important;
+  }
+
+  .project-content img {
+    width: 30mm !important;            /* Tamaño fijo en milímetros para impresión */
+    max-width: 30mm !important;
+    height: auto !important;
+    margin: 1rem 1rem  !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25) !important; /* Sombra suave restaurada */
+  }
+
+  .project-content p {
+    flex: 1 !important;
+    text-align: justify !important;
+    margin: 0 !important;
+    align-self: flex-start;
+  }
+
+  /* ❌ ELEMENTOS OCULTOS EN IMPRESIÓN */
+  footer {
+    display: none !important;     /* Elimina el pie de página en impresión */
+  }
+
+  /* 🔗 ENLACES SIMPLIFICADOS PARA PAPEL */
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+
+  a[href^="mailto:"]:after {
+    content: "";                  /* Elimina dirección adicional luego de mailto */
+  }
+}
