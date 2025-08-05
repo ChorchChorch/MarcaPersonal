@@ -7,6 +7,7 @@
 Enlazado Interno
 Cómo Empezar a GANAR DINERO con ADSENSE Rápido 🔥 EEI PASO A PASO - Embudo de Enlaces Internos
 https://www.youtube.com/watch?v=_C-w1Oqp-Vc
+![Enlazado Interno](https://www.youtube.com/watch?v=_C-w1Oqp-Vc)
 
 
 Arquitectura Web
