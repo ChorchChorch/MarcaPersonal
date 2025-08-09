@@ -1,0 +1,15 @@
+{
+  "id": 3,
+  "type": "variable_set",
+  "assignments": [
+    {
+      "name": "folderName",
+      "value": "@timestamp + '_' + @userText"
+    },
+    {
+      "name": "targetFolder",
+      "value": "'/storage/emulated/0/Android/data/com.microsoft.skydrive/files/OneDrive/LotesDeFotos/' + @folderName"
+    }
+  ],
+  "next": 4
+}
