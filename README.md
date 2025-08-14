@@ -3,10 +3,9 @@ Con el tiempo ir dandome a conocer y aumentar la visibilidad
 - marca personal y CV
 - proyectos y curiosidades
 
-Algo de Vibe Coding, aqui una guia para que minimanente use buenas practicas
-Usar estructuras de markdown para prompt
+Algo de Vibe Coding, guia para el prompt
+Usar estructuras de markdown 
 
-Claro, Jorge. Acá tenés una versión mejorada y más clara de tu prompt, con estructura jerárquica, lenguaje más preciso y formato listo para reutilizar. También corregí errores menores y agrupé mejor los elementos técnicos. Ideal para pedir desarrollo de apps o páginas web con foco en claridad, eficiencia y buenas prácticas.
 
 ---
 
