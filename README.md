@@ -85,7 +85,6 @@ Colores, estilo e inspiración visual deseada:
 
 ---
 
-¿Querés que te lo convierta en un archivo `.md` listo para importar en tu gestor de proyectos o que prepare una versión para flujos `.flo` de Automate? También puedo ayudarte a crear variantes específicas para apps educativas, monitoreo o inclusión TEA.
 
 ## Y si toca algo mas profesional y no un MPV , recordar 
 - escribir pruebas diferentes entre testing y produccion. 
