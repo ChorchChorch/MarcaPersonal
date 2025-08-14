@@ -11,24 +11,27 @@ Claro, Jorge. Acá tenés una versión mejorada y más clara de tu prompt, con e
 ---
 
 ```markdown
-# 📄 Documentación y Contexto
+# Documentación y Contexto
 
-Este documento describe los requisitos funcionales, técnicos y visuales para el desarrollo de una aplicación web. Está diseñado para facilitar la comprensión del pedido y asegurar una implementación eficiente y alineada con buenas prácticas.
+Este documento describe los requisitos funcionales, técnicos y visuales para el desarrollo de una aplicación web.
+Está diseñado para facilitar la comprensión del pedido y asegurar una implementación eficiente y alineada con buenas prácticas.
 
 ---
 
-## 🎯 Objetivo del Proyecto
+## Objetivo del Proyecto
 
 - **Propósito general**: Quiero una app que [describí brevemente qué debe hacer].
 - **Solución esperada**: La solución debe [mencionar qué problema resuelve o qué valor aporta].
 - **Lógica del caso**: Explicá brevemente el flujo o comportamiento esperado del usuario.
 
 Ejemplo:
-> Quiero una app que permita subir fotos, clasificarlas por etiquetas y visualizarlas en una galería accesible. La solución debe ser usable por personas sin conocimientos técnicos y funcionar en dispositivos móviles. La lógica incluye carga de archivos, asignación de etiquetas y visualización filtrada.
+> Quiero una app que permita subir fotos, clasificarlas por etiquetas y visualizarlas en una galería accesible.
+> La solución debe ser usable por personas sin conocimientos técnicos y funcionar en dispositivos móviles.
+> La lógica incluye carga de archivos, asignación de etiquetas y visualización filtrada.
 
 ---
 
-## ⚙️ Funcionalidades Clave
+## Funcionalidades Clave
 
 Listá las acciones que el usuario podrá realizar:
 
@@ -40,7 +43,7 @@ Listá las acciones que el usuario podrá realizar:
 
 ---
 
-## 🧠 Guía de Buenas Prácticas
+## Guía de Buenas Prácticas
 
 - Priorizar siempre soluciones simples. Mantener el código limpio, entendible y jerárquicamente organizado.  
 - Iterar sobre código existente en lugar de crear desde cero, siempre que sea posible.  
@@ -51,7 +54,7 @@ Listá las acciones que el usuario podrá realizar:
 
 ---
 
-## 🧱 Stack Tecnológico
+## Stack Tecnológico
 
 - La app deberá estar realizada con la versión **8 de [especificar tecnología]**.  
 - Evitar el uso de [lenguaje o librería no deseada].  
@@ -61,11 +64,13 @@ Listá las acciones que el usuario podrá realizar:
   - React con Firebase
   - WordPress con plugin personalizado
 
-> Generar el código completo en HTML/CSS/JS, listo para copiar en un archivo `.html`. Usar comentarios para explicar cada sección. Evitar dependencias externas innecesarias.
+> Generar el código completo en HTML/CSS/JS, listo para copiar en un archivo `.html`.
+> Usar comentarios para explicar cada sección.
+> Evitar dependencias externas innecesarias.
 
 ---
 
-## 🎨 Diseño Visual
+## Diseño Visual
 
 Colores, estilo e inspiración visual deseada:
 
@@ -76,7 +81,7 @@ Colores, estilo e inspiración visual deseada:
 
 ---
 
-## 📌 Extras opcionales (si aplica)
+## Extras opcionales (si aplica)
 
 - Idioma principal: Español  
 - Accesibilidad: Contraste alto, navegación por teclado, compatibilidad con lectores de pantalla  
