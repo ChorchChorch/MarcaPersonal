@@ -92,4 +92,63 @@ Colores, estilo e inspiración visual deseada:
 
 ## Y si toca algo mas profesional y no un MPV , recordar 
 - escribir pruebas diferentes entre testing y produccion. 
-- ante cambios de codigo reiniciar todas las isntancias para no tener codigo viejo mezclado  
+- ante cambios de codigo reiniciar todas las isntancias para no tener codigo viejo mezclado
+
+
+# (design system) para tus proyectos web, con componentes reutilizables y escalables.
+
+```markdown
+
+# Diseño visual detallado
+
+Describí con precisión el estilo gráfico deseado. 
+Esta sección influye directamente en la calidad del CSS generado.
+
+### Estilo general
+- Minimalista / Neomorfismo / Brutalismo / Flat / Material Design / Retro / Futurista
+- Inspiración visual: [sitios, apps o marcas que te gusten]
+- Sensación buscada: profesional, amigable, lúdico, técnico, accesible, etc.
+- Importante: Asegurate de que el diseño sea responsivo y accesible. Usá comentarios explicativos. 
+
+### Paleta de colores
+- Color principal: `#1E90FF` (azul vibrante)
+- Color secundario: `#F5F5F5` (gris claro)
+- Color de acento: `#FF4081` (rosa fuerte)
+- Fondo: claro / oscuro / degradado / imagen
+- Contraste: alto para accesibilidad / suave para estética agradable
+
+### Tipografía
+- Fuente principal: `Inter`, `Roboto`, `Open Sans`, etc.
+- Jerarquía: títulos grandes, subtítulos medianos, cuerpo legible
+- Espaciado: interlineado generoso, márgenes amplios
+- Accesibilidad: evitar fuentes decorativas difíciles de leer
+
+### Layout y estructura
+- Diseño responsivo: adaptable a móvil, tablet y escritorio
+- Grid system: 12 columnas / flexbox / CSS Grid.
+- Evitá librerías externas como Bootstrap, salvo que se indique lo contrario
+- Navegación: barra superior fija / lateral / hamburguesa móvil
+- Footer: con enlaces, redes sociales, contacto
+
+### Componentes visuales
+- Botones: estilo, hover, tamaño, íconos
+- Tarjetas: para mostrar contenido visual o textual
+- Formularios: campos accesibles, etiquetas claras
+- Animaciones: transiciones suaves, efectos al hacer scroll o hover
+
+### Accesibilidad visual
+- Contraste mínimo AA/AAA según [WCAG](https://www.w3.org/WAI/WCAG21/quickref/)
+- Navegación por teclado
+- Indicadores visuales de foco
+- Alternativas textuales para íconos e imágenes
+
+### Buenas prácticas CSS
+- Usar variables CSS (`:root`) para colores y fuentes
+- Agrupar estilos por componente o sección
+- Evitar estilos inline
+- Minimizar uso de `!important`
+- Comentar bloques clave para facilitar mantenimiento
+- Generá el CSS completo con variables, clases reutilizables y estructura modular.
+
+```
+
