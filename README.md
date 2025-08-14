@@ -152,3 +152,28 @@ Esta sección influye directamente en la calidad del CSS generado.
 
 ```
 
+DESIG SYSYTEM  Prompt de estilo neomórfico accesible (modo oscuro)
+
+```markdown
+Diseña una interfaz web con estilo neomórfico oscuro, priorizando accesibilidad AA/AAA y claridad visual. La paleta debe incluir fondo azul marino oscuro (#0D1B2A), texto principal gris claro (#E0E0E0), y elementos interactivos en azul vibrante (#1B6CA8). Aplica efectos sutiles de sombra interna y externa para inputs, botones y contenedores, sin comprometer la legibilidad.
+
+Incluye los siguientes elementos:
+- Barra de navegación horizontal con tres ítems: "Inicio", "Acerca", "Contacto". Texto gris claro, espaciado uniforme, efecto elevado sutil.
+- Jerarquía de títulos H1 a H4, con tamaños decrecientes y contraste suficiente.
+- Párrafo de texto con fuente legible, tamaño base 16px, color gris claro.
+- Dos campos de entrada: uno para texto ("Texto de entrada") y otro para contraseña. Bordes redondeados, efecto hundido, etiquetas visibles y accesibles.
+- Checkbox con etiqueta "Opción", estilo neomórfico elevado, foco visible.
+- Botón principal azul vibrante con texto blanco, efecto elevado, foco y hover accesibles.
+- Enlace subrayado en azul vibrante, sin modificar el color del texto base.
+
+Buenas prácticas:
+- Usa `rem` o `em` para tamaños escalables.
+- Asegurá contraste mínimo de 4.5:1 en texto y elementos interactivos.
+- Etiquetas y roles semánticos para accesibilidad.
+- Evitá animaciones bruscas o distractoras.
+- Compatible con navegación por teclado y lectores de pantalla.
+
+Opcional:
+- Agregá variables CSS para colores, sombras y espaciado.
+- Comentá el código para facilitar mantenimiento y adaptación por usuarios no técnicos.
+```
