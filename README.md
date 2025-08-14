@@ -177,3 +177,109 @@ Opcional:
 - Agregá variables CSS para colores, sombras y espaciado.
 - Comentá el código para facilitar mantenimiento y adaptación por usuarios no técnicos.
 ```
+
+```markdown
+# 🧩 Ficha de estilo visual — Neomorfismo táctil accesible
+
+## Estilo general
+- **Estilo:** Neomorfismo + Dark Mode accesible
+- **Inspiración visual:** Craftwork, Linear, GOV.UK Design System
+- **Sensación buscada:** Profesional, táctil, accesible, sobrio, moderno
+- **Importante:**
+  - Mobile first
+  - Accesibilidad AA/AAA
+  - Comentarios explicativos en el código
+  - Etiquetas semánticas y roles ARIA
+
+---
+
+## 🎨 Paleta de colores
+| Elemento         | Color       | Descripción                          |
+|------------------|-------------|--------------------------------------|
+| Principal        | `#E0E0E0`   | Texto y elementos neutros            |
+| Secundario       | `#A0A0A0`   | Bordes, subtítulos, estados pasivos  |
+| Acento           | `#1B6CA8`   | Botones, enlaces, foco               |
+| Fondo            | `#0D1B2A`   | Azul marino profundo                 |
+| Contraste        | Alto        | Cumple WCAG AA/AAA                   |
+
+---
+
+## 🅰️ Tipografía
+- **Fuente principal:** `system-ui`, `Segoe UI`, `Roboto`, `Open Sans`
+- **Jerarquía:**
+  - H1: 2rem, centrado, bold
+  - H2–H4: escalado descendente
+  - Párrafos: 1rem, interlineado 1.6
+- **Espaciado:** Márgenes amplios, separación clara
+- **Accesibilidad:** Tamaño mínimo 16px, sin fuentes decorativas
+
+---
+
+## 📐 Layout y estructura
+- **Diseño responsivo:** Mobile first, adaptable a tablet y escritorio
+- **Grid system:** Flexbox modular, `max-width: 640px` en desktop
+- **Librerías externas:** No se usan por defecto
+- **Navegación:**
+  - Barra superior fija
+  - Menú hamburguesa accesible (`aria-expanded`, `aria-label`)
+- **Footer:**
+  - Enlaces, redes sociales, contacto
+  - Contraste alto y estructura clara
+
+---
+
+## 🔗 Estilo de enlaces
+- **Color por defecto:** `#1B6CA8`
+- **Hover:** `text-decoration: underline; transition: all 0.2s ease-in-out`
+- **Foco:** `outline: 2px solid #FFFFFF`
+- **Accesibilidad:**
+  - Siempre distinguibles del texto normal
+  - No se usa solo color para indicar estado
+  - Se recomienda `aria-label` si el texto no es descriptivo
+
+---
+
+## 🧩 Componentes visuales
+
+### Botones
+- Fondo azul vibrante
+- Texto blanco
+- Bordes redondeados
+- Sombra neomórfica
+- Hover con escala suave
+- Foco visible con borde blanco
+
+### Tarjetas
+- Fondo oscuro
+- Bordes redondeados
+- Sombra externa
+- Contenido textual o visual con jerarquía clara
+
+### Formularios
+- Inputs con sombra interna
+- Etiquetas visibles y accesibles
+- Contraste suficiente
+- Checkbox con `accent-color` azul
+
+### Animaciones
+- Transiciones suaves (`transform`, `background`)
+- Hover y foco con efectos sutiles
+- Sin animaciones bruscas ni distractoras
+
+---
+
+## 🧠 Accesibilidad extendida
+- Compatible con `prefers-contrast: high`
+- Compatible con `prefers-reduced-motion`
+- Uso de roles y etiquetas ARIA
+- Tamaño mínimo de toque: 48px
+
+---
+
+## 🧿 Íconos y gráficos
+- Estilo: líneas simples, sin relleno
+- Formato recomendado: SVG con `title` y `aria-hidden`
+- Uso:
+  - Íconos descriptivos en botones y formularios
+  - No usar íconos como único medio de comunicación
+```
