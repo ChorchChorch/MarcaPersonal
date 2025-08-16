@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SVG limpio y escalado con texto</title>
+  <style>
+    :root {
+      --icon-color: currentColor;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      line-height: 1.5;
+      padding: 2rem;
+      color: #333;
+    }
+
+    .text-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .text-icon svg {
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+      stroke: var(--icon-color);
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    h1, h2, h3, h4, p {
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="text-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
+      <polyline points="88 136 112 160 168 104"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+      <circle cx="128" cy="128" r="96"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
+    </svg>
+    Título H1 con ícono
+  </h1>
+<p></p>
+  <h2 class="text-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
+      <polyline points="88 136 112 160 168 104"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+      <circle cx="128" cy="128" r="96"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
+    </svg>
+    Título H2 con ícono
+  </h2>
+<p></p>
+  <h3 class="text-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
+      <polyline points="88 136 112 160 168 104"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+      <circle cx="128" cy="128" r="96"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
+    </svg>
+    Título H3 con ícono
+  </h3>
+<p></p>
+  <h4 class="text-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
+      <polyline points="88 136 112 160 168 104"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+      <circle cx="128" cy="128" r="96"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
+    </svg>
+    Título H4 con ícono
+  </h4>
+<p></p>
+  <p class="text-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
+      <polyline points="88 136 112 160 168 104"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+      <circle cx="128" cy="128" r="96"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
+    </svg>
+    Este es un párrafo con ícono escalado automáticamente.
+  </p>
+
+</body>
+</html>

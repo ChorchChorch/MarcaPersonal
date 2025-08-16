@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video con controles integrados</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 2rem;
+      color: #333;
+    }
+
+    .video-section {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 8px 8px 16px #d1d1d1, -8px -8px 16px #ffffff;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 57.65%; /* 403 / 699 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 200px;
+    }
+
+    .control-group label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 24px;
+      transition: 0.4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: #007bff;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    input[type="range"] {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="video-section">
+    <h2>Busca Vidas Podcast #0</h2>
+    <p>
+      Controlá la reproducción, el volumen y la velocidad desde los controles integrados.  
+      El espacio está reservado desde el inicio para evitar redibujos.
+    </p>
+
+    <!-- Contenedor del video -->
+    <div class="video-wrapper">
+      <div id="player"></div>
+    </div>
+
+    <!-- Controles alineados -->
+    <div class="controls">
+      <!-- Reproducción ON/OFF -->
+      <div class="control-group">
+        <label for="playToggle">Reproducción</label>
+        <label class="switch">
+          <input type="checkbox" id="playToggle" checked />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- Volumen -->
+      <div class="control-group">
+        <label for="volume">Volumen (30%)</label>
+        <input type="range" id="volume" min="0" max="100" value="30" />
+      </div>
+
+      <!-- Velocidad -->
+      <div class="control-group">
+        <label for="speed">Velocidad (1x)</label>
+        <input type="range" id="speed" min="0.25" max="2" step="0.25" value="1" />
+      </div>
+    </div>
+  </section>
+
+  <!-- API de YouTube -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <script>
+    let player;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '403',
+        width: '699',
+        videoId: 'dLKBsReU-fQ',
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          controls: 1,
+          rel: 0,
+          modestbranding: 1
+        },
+        events: {
+          onReady: onPlayerReady
+        }
+      });
+    }
+
+    function onPlayerReady() {
+      player.unMute();
+      player.setVolume(30);
+      player.setPlaybackRate(1);
+
+      // Volumen
+      const volumeSlider = document.getElementById('volume');
+      volumeSlider.addEventListener('input', () => {
+        const volume = parseInt(volumeSlider.value, 10);
+        player.setVolume(volume);
+      });
+
+      // Velocidad
+      const speedSlider = document.getElementById('speed');
+      speedSlider.addEventListener('input', () => {
+        const speed = parseFloat(speedSlider.value);
+        player.setPlaybackRate(speed);
+      });
+
+      // Reproducción ON/OFF
+      const playToggle = document.getElementById('playToggle');
+      playToggle.addEventListener('change', () => {
+        if (playToggle.checked) {
+          player.playVideo();
+        } else {
+          player.pauseVideo();
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

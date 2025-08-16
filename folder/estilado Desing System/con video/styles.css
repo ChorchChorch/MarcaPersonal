@@ -1,0 +1,71 @@
+/* styles.css */
+
+/* Estilo general del cuerpo */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 2rem;
+  color: #333;
+}
+
+/* Sección del video con sombra neomórfica */
+.video-section {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 8px 8px 16px #d1d1d1, -8px -8px 16px #ffffff;
+}
+
+/* Contenedor que mantiene la proporción del video (403 / 699 ≈ 0.5765) */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 57.65%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Imagen previa con botón de reproducción */
+.video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.video-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Botón de reproducción visual */
+.play-button {
+  position: absolute;
+  font-size: 3rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Estilo del iframe cuando se carga */
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

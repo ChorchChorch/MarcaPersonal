@@ -1,0 +1,52 @@
+<style>
+  .review {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espacio entre texto y bloque de estrellas */
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .stars {
+    display: inline-flex;
+    gap: 0; /* 🔥 Sin separación entre estrellas */
+    line-height: 1;
+  }
+
+  .star {
+    width: 1em;
+    height: 1em;
+    fill: gold;
+    vertical-align: baseline;
+  }
+
+  .star.dimmed {
+    fill: #ccc;
+  }
+
+  .label {
+    font-weight: 500;
+  }
+</style>
+
+<div class="review">
+  <span class="label">Juan Pérez:</span>
+  <span class="stars">
+    <svg class="star" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M128 20l26.91 54.55L213 83.64l-42.55 41.5L181.82 196 128 167.27 74.18 196l11.37-70.86L43 83.64l58.09-9.09L128 20z" />
+    </svg>
+    <svg class="star" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M128 20l26.91 54.55L213 83.64l-42.55 41.5L181.82 196 128 167.27 74.18 196l11.37-70.86L43 83.64l58.09-9.09L128 20z" />
+    </svg>
+    <svg class="star" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M128 20l26.91 54.55L213 83.64l-42.55 41.5L181.82 196 128 167.27 74.18 196l11.37-70.86L43 83.64l58.09-9.09L128 20z" />
+    </svg>
+    <svg class="star" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M128 20l26.91 54.55L213 83.64l-42.55 41.5L181.82 196 128 167.27 74.18 196l11.37-70.86L43 83.64l58.09-9.09L128 20z" />
+    </svg>
+    <svg class="star dimmed" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M128 20l26.91 54.55L213 83.64l-42.55 41.5L181.82 196 128 167.27 74.18 196l11.37-70.86L43 83.64l58.09-9.09L128 20z" />
+    </svg>
+  </span>
+  <span>4.0 de 5</span>
+</div>

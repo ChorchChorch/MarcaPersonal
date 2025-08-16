@@ -1,0 +1,51 @@
+ID,Título SEO,Metadescripción,Vertical temática,Volumen estimado de búsqueda,Volumen España,Video recomendado (0-5),Tipo de contenido sugerido,Slug sugerido,Prioridad editorial
+1,¿Qué es el autismo? Definición clara y actualizada,"Descubre qué es el autismo, cómo se define hoy y por qué es clave entender el espectro.",Diagnóstico,Alto,Alto,3,Guía,que-es-autismo,Alta
+2,Diferencias entre autismo y Asperger,"Aprende a distinguir entre autismo y Asperger: similitudes, diferencias y evolución diagnóstica.",Diagnóstico,Alto,Alto,2,Comparativa,autismo-vs-asperger,Alta
+3,Mitos comunes sobre el autismo,Derribamos los mitos más frecuentes sobre el autismo con evidencia y testimonios reales.,Conciencia social,Medio,Medio,1,Testimonio / Desmitificación,mitos-autismo,Media
+4,Diagnóstico temprano en niños con autismo,Cómo detectar señales de autismo en la infancia y por qué el diagnóstico temprano marca la diferencia.,Diagnóstico,Alto,Alto,3,Guía,diagnostico-temprano-autismo,Alta
+5,Signos de alerta por edad en el espectro autista,Conoce los signos de alerta por edad para identificar posibles casos de autismo en niños y adolescentes.,Diagnóstico,Alto,Alto,2,Checklist,signos-alerta-autismo,Alta
+6,Autismo en niñas: características únicas,El autismo en niñas suele pasar desapercibido. Te contamos cómo se manifiesta y cómo detectarlo.,Diagnóstico,Medio,Medio,2,Guía,autismo-en-ninas,Alta
+7,¿Qué significa “trastorno del espectro autista”?,Explicamos qué implica el término TEA y cómo se usa en contextos clínicos y educativos.,Diagnóstico,Medio,Medio,1,Guía,que-significa-tea,Media
+8,Niveles de apoyo en el espectro autista,Qué son los niveles de apoyo en autismo y cómo se aplican en diagnósticos y terapias.,Diagnóstico,Medio,Medio,1,Guía,niveles-apoyo-autismo,Media
+9,Diagnóstico tardío de autismo en adultos,Muchas personas descubren su autismo en la adultez. Aquí te contamos cómo y por qué sucede.,Diagnóstico,Medio,Medio,2,Guía,diagnostico-tardio-autismo,Media
+10,¿Puede cambiar el diagnóstico de autismo con el tiempo?,¿Es posible que el diagnóstico de autismo evolucione? Analizamos casos y criterios clínicos.,Diagnóstico,Bajo,Bajo,0,Análisis,puede-cambiar-diagnostico-autismo,Baja
+11,Autismo leve: ¿qué significa y cómo se detecta?,Exploramos qué implica el diagnóstico de autismo leve y cómo identificarlo en distintos contextos.,Diagnóstico,Medio,Medio,2,Guía,autismo-leve-deteccion,Media
+12,Autismo severo: desafíos y estrategias de apoyo,Qué caracteriza al autismo severo y cómo acompañar con recursos adaptados y empatía.,Diagnóstico,Medio,Medio,1,Guía,autismo-severo-estrategias,Media
+13,Autismo no verbal: comunicación alternativa,"Estrategias para apoyar a personas con autismo no verbal: pictogramas, tecnología y lenguaje visual.",Comunicación,Medio,Medio,3,Guía,autismo-no-verbal,Alta
+14,Autismo verbal: ¿qué significa y cómo se manifiesta?,El autismo verbal puede incluir lenguaje fluido pero con desafíos sociales. Te explicamos cómo.,Comunicación,Medio,Medio,2,Guía,autismo-verbal-significado,Media
+15,Autismo y sensibilidad sensorial,Cómo afecta la sensibilidad sensorial en personas con autismo y qué adaptaciones pueden ayudar.,Sensibilidad,Medio,Medio,2,Guía,autismo-sensibilidad-sensorial,Media
+16,Autismo y rutinas: ¿por qué son importantes?,Las rutinas brindan seguridad a personas con autismo. Descubrí cómo estructurarlas sin rigidez.,Comportamiento,Medio,Medio,1,Guía,autismo-rutinas-importancia,Media
+17,Autismo y intereses restringidos,Qué son los intereses intensos en el espectro autista y cómo canalizarlos positivamente.,Comportamiento,Medio,Medio,1,Guía,autismo-intereses-restringidos,Media
+18,Autismo y habilidades especiales,Muchas personas con autismo tienen talentos únicos. Te contamos cómo identificarlos y potenciarlos.,Habilidades,Medio,Medio,2,Guía,autismo-habilidades-especiales,Media
+19,Autismo y ansiedad: cómo se relacionan,"La ansiedad es común en el espectro autista. Analizamos causas, señales y formas de abordarla.",Salud mental,Medio,Medio,2,Guía,autismo-ansiedad,Media
+20,Autismo y depresión: señales y apoyo,Cómo detectar depresión en personas con autismo y qué estrategias pueden ayudar a intervenir a tiempo.,Salud mental,Medio,Medio,2,Guía,autismo-depresion,Media
+21,Autismo y comunicación: desafíos y recursos,Exploramos cómo se manifiestan los desafíos comunicativos en el espectro y qué herramientas pueden ayudar.,Comunicación,Medio,Medio,2,Guía,autismo-comunicacion-desafios,Media
+22,Autismo y lenguaje corporal: claves para entender,Cómo interpretar el lenguaje corporal en personas con autismo y mejorar la interacción social.,Comunicación,Bajo,Bajo,1,Guía,autismo-lenguaje-corporal,Baja
+23,Autismo y empatía: ¿mito o realidad?,Desmitificamos la idea de que las personas con autismo no sienten empatía. Evidencia y testimonios.,Conciencia social,Medio,Medio,1,Desmitificación,autismo-empatia,Media
+24,Autismo y relaciones sociales,Qué dificultades enfrentan en lo social y cómo fomentar vínculos saludables desde la infancia.,Social,Medio,Medio,2,Guía,autismo-relaciones-sociales,Media
+25,Autismo y escolarización: inclusión efectiva,Estrategias para una educación inclusiva que respete las necesidades del espectro autista.,Educación,Medio,Medio,2,Guía,autismo-escolarizacion-inclusion,Media
+26,Autismo y bullying escolar,Cómo prevenir el acoso escolar hacia estudiantes con autismo y crear entornos seguros.,Educación,Medio,Medio,1,Guía,autismo-bullying-escolar,Media
+27,Autismo y adaptación curricular,Qué ajustes pedagógicos pueden mejorar la experiencia educativa de estudiantes con TEA.,Educación,Medio,Medio,1,Guía,autismo-adaptacion-curricular,Media
+28,Autismo y tecnología: herramientas útiles,"Aplicaciones, dispositivos y recursos digitales que apoyan la comunicación y el aprendizaje.",Tecnología,Medio,Medio,3,Recurso,autismo-tecnologia-herramientas,Alta
+29,Autismo y pictogramas: cómo usarlos,"Qué son los pictogramas, cómo se implementan y por qué son útiles en contextos educativos y familiares.",Comunicación,Medio,Medio,2,Guía,autismo-pictogramas,Media
+30,Autismo y tableros de comunicación,Cómo funcionan los tableros de comunicación y qué tipos existen para distintos niveles de apoyo.,Comunicación,Bajo,Bajo,1,Guía,autismo-tableros-comunicacion,Baja
+31,Autismo y terapia ocupacional,Cómo la terapia ocupacional ayuda a desarrollar autonomía y habilidades funcionales en personas con TEA.,Terapias,Medio,Medio,3,Guía,autismo-terapia-ocupacional,Media
+32,Autismo y terapia cognitivo-conductual,Qué es la TCC y cómo se adapta para personas con autismo en distintos niveles de apoyo.,Terapias,Medio,Medio,2,Guía,autismo-terapia-cognitivo-conductual,Media
+33,Autismo y musicoterapia: beneficios reales,"Descubrí cómo la música puede mejorar la comunicación, la regulación emocional y el vínculo social.",Terapias,Bajo,Bajo,2,Guía,autismo-musicoterapia,Media
+34,Autismo y juego: herramientas terapéuticas,El juego como medio de expresión y aprendizaje en niños con autismo. Estrategias y ejemplos.,Terapias,Medio,Medio,2,Guía,autismo-juego-terapeutico,Media
+35,Autismo y alimentación selectiva,Por qué muchas personas con autismo tienen preferencias alimentarias marcadas y cómo abordarlas.,Salud,Medio,Medio,1,Guía,autismo-alimentacion-selectiva,Media
+36,Autismo y sueño: desafíos frecuentes,"Problemas de sueño en el espectro autista: causas, consecuencias y soluciones prácticas.",Salud,Medio,Medio,2,Guía,autismo-sueno-desafios,Media
+37,Autismo y vida adulta: desafíos invisibles,Qué cambia en la adultez para personas con autismo y cómo acompañar desde lo laboral y emocional.,Vida adulta,Medio,Medio,2,Guía,autismo-vida-adulta,Media
+38,Autismo y empleo: inclusión laboral,"Estrategias para fomentar empleabilidad, adaptaciones razonables y entornos inclusivos.",Vida adulta,Medio,Medio,1,Artículo,autismo-empleo-inclusion,Media
+39,Autismo y sexualidad: información sin tabúes,"Cómo abordar la sexualidad en personas con autismo con respeto, claridad y educación afectiva.",Vida adulta,Medio,Medio,1,Guía,autismo-sexualidad,Media
+40,Autismo y pareja: vínculos posibles,Qué desafíos y fortalezas aparecen en relaciones de pareja donde hay una persona con autismo.,Vida adulta,Bajo,Bajo,0,Guía,autismo-pareja,Baja
+41,Autismo y maternidad/paternidad,"Ser madre o padre con autismo: experiencias reales, apoyos necesarios y desafíos únicos.",Vida adulta,Bajo,Bajo,0,Testimonio,autismo-maternidad-paternidad,Baja
+42,Autismo y hermanos: vínculos y emociones,Cómo viven los hermanos la experiencia del autismo y qué recursos pueden fortalecer el vínculo.,Social,Bajo,Bajo,1,Guía,autismo-hermanos,Baja
+43,Autismo y diagnóstico dual,"Qué implica tener autismo junto a otras condiciones como TDAH, ansiedad o epilepsia.",Salud,Medio,Medio,1,Guía,autismo-diagnostico-dual,Media
+44,Autismo y comorbilidades frecuentes,Analizamos las condiciones que suelen coexistir con el autismo y cómo abordarlas integralmente.,Salud,Medio,Medio,1,Guía,autismo-comorbilidades,Media
+45,Autismo y neurodiversidad: enfoque actual,Qué significa el paradigma de la neurodiversidad y cómo transforma la mirada sobre el autismo.,Conciencia social,Medio,Medio,1,Artículo,autismo-neurodiversidad,Media
+46,Autismo y derechos: marco legal en Argentina,Qué leyes protegen a las personas con autismo en Argentina y cómo acceder a apoyos.,Marco legal,Medio,Medio,1,Guía,autismo-derechos-argentina,Media
+47,Autismo y accesibilidad digital,"Cómo diseñar sitios web, apps y contenidos accesibles para personas con TEA. Guía práctica.",Tecnología,Medio,Medio,3,Guía,autismo-accesibilidad-digital,Media
+48,Autismo y medios de comunicación,"Cómo se representa el autismo en cine, TV y redes. Análisis crítico y propuestas éticas.",Conciencia social,Bajo,Bajo,1,Análisis,autismo-medios-comunicacion,Baja
+49,Autismo y activismo: voces que transforman,"Historias de activistas autistas que luchan por inclusión, respeto y visibilidad.",Conciencia social,Bajo,Bajo,1,Testimonio,autismo-activismo,Baja
+50,Autismo y comunidad: redes de apoyo,"Dónde encontrar grupos, espacios y recursos para familias y personas con autismo en Argentina.",Social,Medio,Medio,1,Guía,autismo-comunidad-redes,Media

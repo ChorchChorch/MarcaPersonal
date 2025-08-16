@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video embebido con imagen previa</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Sección que contiene el video o la imagen previa -->
+  <section class="video-section">
+    <h2>Busca Vidas Podcast #0</h2>
+    <p>
+      Hacé clic en la imagen para cargar el video.  
+      El espacio ya está reservado para evitar redibujos al cargar el iframe.
+    </p>
+
+    <!-- Contenedor que se reemplaza dinámicamente -->
+    <div class="video-wrapper" id="videoContainer">
+      <!-- Imagen previa con botón de reproducción -->
+      <div class="video-placeholder" onclick="loadVideo()">
+        <!-- Imagen de portada (podés usar una captura del video o ilustración) -->
+        <img src="https://img.youtube.com/vi/dLKBsReU-fQ/hqdefault.jpg" alt="Vista previa del video" />
+        <!-- Botón de reproducción visual -->
+        <div class="play-button">▶</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script que reemplaza la imagen por el iframe de YouTube -->
+  <script>
+    function loadVideo() {
+      const container = document.getElementById('videoContainer');
+
+      // Reemplaza el contenido del contenedor por el iframe
+      container.innerHTML = `
+        <iframe
+          src="https://www.youtube.com/embed/dLKBsReU-fQ?autoplay=1"
+          title="Busca Vidas Podcast #0"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      `;
+    }
+  </script>
+
+</body>
+</html>
